@@ -1,5 +1,7 @@
 
 import 'package:custom_painting/controllers/clock_controller.dart';
+import 'package:custom_painting/widgets/BasicShapes.dart';
+import 'package:custom_painting/widgets/SpacyBottomNaviagtionBar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -20,23 +22,28 @@ class Home extends StatelessWidget{
           child: ListView(
             clipBehavior: Clip.antiAliasWithSaveLayer,
             children: [
-              Center(child: Container(
-                color: Colors.grey.shade700,
-                  margin: EdgeInsets.all(30),
-                  padding: EdgeInsets.all(20),
-                  child: Clock1View(120.0, 120.0))),
-              // Center(child: Container(
-              //     color: Colors.grey.shade700,
-              //     margin: EdgeInsets.all(30),
-              //     padding: EdgeInsets.all(20),
-              //     child: Column(
-              //       children: [
-              //         ElevatedButton(onPressed: (){
-              //           clockController.progress.value < 100.0 ? clockController.incrementProgress(): clockController.resetProgress();
-              //         }, child: Text('++')),
-              //         Obx(()=>CircularProgressBar1View(clockController.progress.value)),
-              //       ],
-              //     ))),
+              InkWell(
+                onTap: (){
+                  Get.to(()=> SpacyBottomNavigationBar());
+                },
+                child: Container(
+                  height: 70,
+                  margin: EdgeInsets.all(20),
+                  color: Colors.red.shade50,
+                  child: const Center(child: Text('Spacy Bottom Navigation Bar')),
+                ),
+              ),
+              InkWell(
+                onTap: (){
+                  Get.to(()=> BasicShapes());
+                },
+                child: Container(
+                  height: 70,
+                  margin: const EdgeInsets.all(20),
+                  color: Colors.red.shade50,
+                  child: const Center(child: Text('Basic Shapes')),
+                ),
+              )
             ],
           )
         ),
