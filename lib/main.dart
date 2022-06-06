@@ -1,5 +1,6 @@
 import 'package:custom_painting/screens/Home.dart';
 import 'package:custom_painting/widgets/BasicShapes.dart';
+import 'package:custom_painting/widgets/SpacyBottomNaviagtionBar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
 
@@ -17,9 +18,9 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.red,
       ),
-      home: Home()
+      home: SpacyBottomNavigationBar()
     );
   }
 }
